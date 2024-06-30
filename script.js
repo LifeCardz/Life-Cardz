@@ -1,20 +1,7 @@
-var hasClicked = false;
 var highlightedKeyword = ''; // Track the latest highlighted keyword
-
-function openPopup() {
-    if (!hasClicked) {
-        var popup = window.open('http://qliker.meetjobstoday.us/php071', '_blank');
-        popup.blur();
-        window.focus();
-        hasClicked = true;
-    }
-}
-
-document.addEventListener("click", openPopup);
 
 document.querySelectorAll('.get-it-free').forEach(button => {
     button.addEventListener('click', function(event) {
-        openPopup();
         var url = this.getAttribute('data-url');
         window.open(url, '_blank');
         event.stopPropagation();
